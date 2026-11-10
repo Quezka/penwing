@@ -11,6 +11,19 @@ A GNOME Shell extension (GNOME Shell 50, Wayland and X11).
 
 All art is drawn in code with Cairo (`lib/art.js`); there are no image files.
 
+## Your own dance
+
+Penwing can play any animated GIF as his dance instead of the drawn one:
+
+```bash
+tools/prepare-dance.py my-dance.gif          # needs python3-pil
+```
+
+This removes a flat background, crops and scales the frames, and writes them to
+`~/.config/penwing/dance/`. Restart the extension (or log out and in) to load them.
+Delete that folder to go back to the drawn dance. The frames stay on your machine;
+they are not part of this repository.
+
 ## Install
 
 ```bash
@@ -38,6 +51,8 @@ gjs -m tests/render.js /tmp       # writes /tmp/penwing-frames.png to check the 
 - `lib/pose.js`: domain, state and time to a drawing pose.
 - `lib/art.js`: drawing, paints a pose with any Cairo context.
 - `lib/penguinActor.js`: UI, the on-screen widget.
+- `lib/danceFrames.js`: adapter, loads the optional dance frames.
+- `tools/prepare-dance.py`: turns a GIF into dance frames.
 - `extension.js`: wiring, frame timer, screen bounds.
 
 ## License

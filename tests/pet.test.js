@@ -59,6 +59,13 @@ check('dance has happy eyes and notes', poseFor(pet).eyes === 'happy' && poseFor
 pet._enter(State.SLEEP, 5);
 check('sleep has closed eyes and zzz', poseFor(pet).eyes === 'closed' && poseFor(pet).zzz >= 0);
 
+const custom = new Pet({minX: 0, maxX: 10, rng: seeded(2), danceSeconds: 7.2});
+custom.poke();
+custom.tick(7.1);
+check('custom dance length holds', custom.state === State.DANCE);
+custom.tick(0.2);
+check('custom dance length ends', custom.state !== State.DANCE);
+
 if (failures) {
     print(`${failures} failure(s)`);
     imports.system.exit(1);
