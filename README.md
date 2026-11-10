@@ -1,6 +1,6 @@
 # Penwing
 
-A small, round penguin with a red scarf who lives at the bottom of your screen.
+A small Tux-style penguin (black coat, white front, yellow beak and feet) with a red scarf who lives at the bottom of your screen.
 A GNOME Shell extension (GNOME Shell 50, Wayland and X11).
 
 - Waddles left and right along the bottom of the work area (above the dock/taskbar).
