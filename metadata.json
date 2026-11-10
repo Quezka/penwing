@@ -1,0 +1,8 @@
+{
+  "uuid": "penwing@quezka.uk",
+  "name": "Penwing",
+  "description": "A small round penguin that waddles along the bottom of your screen, naps, and dances when you click it.",
+  "shell-version": ["50"],
+  "url": "https://github.com/Quezka/penwing",
+  "version-name": "0.1.0"
+}
