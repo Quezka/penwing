@@ -1,0 +1,18 @@
+[Desktop Entry]
+Type=Application
+Name=Penwing
+Comment=Start or stop the desktop penguin
+Exec=penwing toggle
+Icon=penwing
+Terminal=false
+Categories=Utility;Amusement;
+Keywords=penguin;pet;companion;
+Actions=start;stop;
+
+[Desktop Action start]
+Name=Start
+Exec=penwing start
+
+[Desktop Action stop]
+Name=Stop
+Exec=penwing stop

@@ -58,3 +58,14 @@ gjs -m tests/render.js /tmp       # writes /tmp/penwing-frames.png to check the 
 ## License
 
 MIT
+
+## Start and stop it like an app
+
+```sh
+./app/install-app.sh
+```
+
+This adds **Penwing** to the app grid (with the penguin as its icon) and a
+`penwing` command in `~/.local/bin`. Click the app to toggle the penguin on or
+off; right-click it for **Start** and **Stop**. From a terminal:
+`penwing start`, `penwing stop`, `penwing toggle` or `penwing status`.

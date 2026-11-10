@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+# Start, stop or toggle the Penwing penguin (the GNOME Shell extension).
+# Usage: penwing [start|stop|toggle|status]   (default: toggle)
+set -euo pipefail
+UUID=penwing@quezka.uk
+
+is_on() { gnome-extensions info "$UUID" 2>/dev/null | grep -q 'State: ACTIVE'; }
+note() { command -v notify-send >/dev/null && notify-send -a Penwing -i "$HOME/.local/share/icons/hicolor/256x256/apps/penwing.png" -t 1500 "Penwing" "$1" || true; }
+
+start() { gnome-extensions enable "$UUID"; note "Penguin is out"; }
+stop()  { gnome-extensions disable "$UUID"; note "Penguin went home"; }
+
+case "${1:-toggle}" in
+  start)  start ;;
+  stop)   stop ;;
+  toggle) if is_on; then stop; else start; fi ;;
+  status) if is_on; then echo running; else echo stopped; fi ;;
+  *) echo "usage: penwing [start|stop|toggle|status]" >&2; exit 2 ;;
+esac
